@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Prism from 'prismjs'
+import React, {Component} from 'react';
+import Prism from 'prismjs';
 
 import '../../assets/css/prism.css';
 
