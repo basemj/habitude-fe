@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 import { storiesOf } from '@storybook/react';
 
@@ -9,15 +10,22 @@ const questionObject = {
   description: 'Here is the description for this simple question.',
   codeSnippet: '// foo bar\nvar foo = \'bar\';\n\nfunction hello() {\n\treturn \'Hello World!\'\n}',
   codeSnippetLang: 'js',
-  answers: [1,2,3,4]
+  answers: [
+    {
+      id: 'answer1',
+      text: 'This is a sample answer'
+    },
+    {
+      id: 'answer2',
+      text: 'This could be the right answer'
+    },
+    {
+      id: 'answer3',
+      text: 'Here\'s another answer'
+    }
+  ]
 }
 
 storiesOf('Question', module)
   .add('Question with no input', () => <Question />)
-  .add('Question with correct input', () => <Question 
-      title={questionObject.title}
-      description={questionObject.description}
-      codeSnippet={questionObject.codeSnippet}
-      codeSnippetLang={questionObject.codeSnippetLang}
-      answers={questionObject.answers}
-    />);
+  .add('Question with correct input', () => <Question question={questionObject} answerClickHandler={action('answered')} />);
