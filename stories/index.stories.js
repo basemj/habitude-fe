@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 
 import { storiesOf } from '@storybook/react';
 
-import Question from '../src/components/question';
+import Question from '../src/components/Question';
 
 const questionObject = {
   title: 'Simple question',

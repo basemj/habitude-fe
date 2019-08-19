@@ -45,7 +45,7 @@ export default class Question extends Component {
 
         <ul>
           {answers.map((answer) => 
-            <li onClick={this.sendAnswer.bind(this, answer)}>{answer.text}</li>
+            <li key={answer.id} onClick={this.sendAnswer.bind(this, answer)}>{answer.text}</li>
           )}
         </ul>
       </div>
