@@ -1,19 +1,31 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import Question from '../src/components/Question';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+const questionObject = {
+  title: 'Simple question',
+  description: 'Here is the description for this simple question.',
+  codeSnippet: '// foo bar\nvar foo = \'bar\';\n\nfunction hello() {\n\treturn \'Hello World!\'\n}',
+  codeSnippetLang: 'js',
+  answers: [
+    {
+      id: 'answer1',
+      text: 'This is a sample answer'
+    },
+    {
+      id: 'answer2',
+      text: 'This could be the right answer'
+    },
+    {
+      id: 'answer3',
+      text: 'Here\'s another answer'
+    }
+  ]
+}
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+storiesOf('Question', module)
+  .add('Question with no input', () => <Question />)
+  .add('Question with correct input', () => <Question question={questionObject} answerClickHandler={action('answered')} />);
