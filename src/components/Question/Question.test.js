@@ -10,17 +10,17 @@ const questionObject = {
   answers: [
     {
       id: 'answer1',
-      text: 'This is a sample answer'
+      text: 'This is a sample answer',
     },
     {
       id: 'answer2',
-      text: 'This could be the right answer'
+      text: 'This could be the right answer',
     },
     {
       id: 'answer3',
-      text: 'Here\'s another answer'
-    }
-  ]
+      text: 'Here\'s another answer',
+    },
+  ],
 };
 
 describe('Question', () => {
@@ -55,7 +55,7 @@ describe('Question', () => {
 
   describe('action', () => {
     let component;
-    let answerClickHandler = jest.fn();
+    const answerClickHandler = jest.fn();
 
     it('invokes a callback with the correct data', () => {
       component = mount(<Question question={questionObject} answerClickHandler={answerClickHandler} />);
