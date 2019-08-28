@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import AnswerEditForm from './index';
+import AnswerEditForm from './AnswerEditForm';
 import { initialData } from '../../../../stories/AnswerEditForm.stories';
 
 describe('AnswerEditForm layout', () => {
@@ -46,7 +46,6 @@ describe('AnswerEditForm onSubmit action', () => {
     expect(action).toHaveBeenCalledWith({ index: 2, isCorrect: true, text: 'lots of text' });
     expect(preventDefault).toHaveBeenCalled();
   });
-
 
   it('should not be called when textarea is empty', () => {
     const action = jest.fn();

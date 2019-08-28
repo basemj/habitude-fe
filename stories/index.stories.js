@@ -1,8 +1,7 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-
 import { storiesOf } from '@storybook/react';
-
 import Question from '../src/components/Question';
 
 const questionObject = {
@@ -13,19 +12,21 @@ const questionObject = {
   answers: [
     {
       id: 'answer1',
-      text: 'This is a sample answer'
+      text: 'This is a sample answer',
     },
     {
       id: 'answer2',
-      text: 'This could be the right answer'
+      text: 'This could be the right answer',
     },
     {
       id: 'answer3',
-      text: 'Here\'s another answer'
-    }
-  ]
-}
+      text: 'Here\'s another answer',
+    },
+  ],
+};
 
 storiesOf('Question', module)
   .add('Question with no input', () => <Question />)
   .add('Question with correct input', () => <Question question={questionObject} answerClickHandler={action('answered')} />);
+
+export default questionObject;

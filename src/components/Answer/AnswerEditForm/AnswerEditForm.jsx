@@ -53,4 +53,5 @@ AnswerEditForm.defaultProps = {
   },
   onSubmit: () => {},
 };
+
 export default AnswerEditForm;
