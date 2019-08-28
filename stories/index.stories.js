@@ -13,14 +13,17 @@ const questionObject = {
     {
       id: 'answer1',
       text: 'This is a sample answer',
+      isCorrect: false,
     },
     {
       id: 'answer2',
       text: 'This could be the right answer',
+      isCorrect: true,
     },
     {
       id: 'answer3',
       text: 'Here\'s another answer',
+      isCorrect: false,
     },
   ],
 };

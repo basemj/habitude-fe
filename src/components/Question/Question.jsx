@@ -15,6 +15,10 @@ export default class Question extends Component {
       question,
     } = this.props;
 
+    if (!question) {
+      return null;
+    }
+
     const {
       title,
       description,
@@ -28,10 +32,6 @@ export default class Question extends Component {
         answerClickHandler(answer);
       }
     };
-
-    if (!question || !answers) {
-      return null;
-    }
 
     return (
       <div>
@@ -68,14 +68,10 @@ Question.propTypes = {
     description: PropTypes.string,
     codeSnippet: PropTypes.string,
     codeSnippetLang: PropTypes.string,
-    answers: PropTypes.arrayOf(PropTypes.object),
-  }),
-};
-
-Question.defaultProps = {
-  question: {
-    title: 'Question',
-    codeSnippetLang: 'js',
-    answers: [],
-  },
+    answers: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+      isCorrect: PropTypes.bool,
+    })),
+  }).isRequired,
 };
