@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question snapshot it renders 1`] = `
+"<div><h1>Simple question</h1><p>Here is the description for this simple question.</p><pre><code class=\\"language-js\\">// foo bar
+var foo = 'bar';
+
+function hello() {
+	return 'Hello World!'
+}</code></pre><ul><li><button type=\\"button\\">This is a sample answer</button></li><li><button type=\\"button\\">This could be the right answer</button></li><li><button type=\\"button\\">Here's another answer</button></li></ul></div>"
+`;
