@@ -36,18 +36,17 @@ export default class Question extends Component {
     return (
       <div>
         <h1>{title}</h1>
-        {description ? <p>{description}</p> : null}
+        {description && <p>{description}</p>}
 
         {
           codeSnippet
-            ? (
+            && (
               <pre>
                 <code className={`language-${codeSnippetLang}`}>
                   {`${codeSnippet}`}
                 </code>
               </pre>
             )
-            : null
         }
 
         <ul>
