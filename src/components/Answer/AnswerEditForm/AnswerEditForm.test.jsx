@@ -32,7 +32,7 @@ describe('AnswerEditForm onSubmit action', () => {
     wrapper.find('textarea').first().simulate('change', { target: { value: 'abc' } });
     expect(wrapper.find('textarea').first().props().value).toBe('abc');
     wrapper.find('form').first().simulate('submit', { preventDefault });
-    expect(action).toHaveBeenCalledWith({ index: 0, isCorrect: false, text: 'abc' });
+    expect(action).toHaveBeenCalledWith({ isCorrect: false, text: 'abc' });
     expect(preventDefault).toHaveBeenCalled();
   });
 
@@ -43,7 +43,7 @@ describe('AnswerEditForm onSubmit action', () => {
 
     expect(wrapper.find('textarea').first().props().value).toBe('lots of text');
     wrapper.find('form').first().simulate('submit', { preventDefault });
-    expect(action).toHaveBeenCalledWith({ index: 2, isCorrect: true, text: 'lots of text' });
+    expect(action).toHaveBeenCalledWith({ isCorrect: true, text: 'lots of text' });
     expect(preventDefault).toHaveBeenCalled();
   });
 

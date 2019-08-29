@@ -1,0 +1,15 @@
+.form {
+
+}
+.form textarea {
+  width: 100%;
+  min-height: 150px;
+}
+.answersHasChanged {
+  position: fixed;
+  background-color: grey;
+  color: white;
+  padding: 30px;
+  top: 0;
+  right: 0;
+}
