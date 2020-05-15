@@ -13,7 +13,7 @@ function App() {
           path="/auth/:token"
           render={(props) => {
             localStorage.setItem('lala', props.match.params.token);
-            return <span>{props.match.params.token}</span>;
+            props.history.push('/');
           }}
         />
       </Switch>
